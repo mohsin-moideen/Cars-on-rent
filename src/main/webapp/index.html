@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
 <head>
+	<base href="/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>carsOnRent</title>
@@ -17,23 +18,34 @@
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
     <link rel="stylesheet" href="content/css/main.css">
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- RENT-IT Theme css -->
+    <!-- <link href="content/css/rent-it/theme.css" rel="stylesheet">
+    <link href="content/css/rent-it/owl.carousel.min.css" rel="stylesheet">
+    <link href="content/css/rent-it/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="content/css/rent-it/bootstrap-select.min.css" rel="stylesheet">
+    <link href="content/css/rent-it/font-awesome.min.css" rel="stylesheet"> --> 
+    
+    
     <!-- endbuild -->
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.webapp" />
 </head>
-<body ng-app="carsOnRentApp" ng-strict-di>
+<body ng-app="carsOnRentApp" ng-strict-di class="wide">
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <page-ribbon></page-ribbon>
     <div ui-view="navbar" ng-cloak></div>
     <div class="container">
-        <div class="well" ui-view="content">
+        <div ui-view="content">
             <!-- Angular views -->
         </div>
 
         <div class="footer" ng-cloak>
-            <p data-translate="footer">This is your footer</p>
+        <div class="footer-meta">
+                <div class="row">
+            		<!-- <p data-translate="footer"></p> -->
+            </div></div> 
         </div>
     </div>
     <noscript>
@@ -106,7 +118,63 @@
     <script src="app/layouts/error/error.state.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
+    <script src="app/entities/provider/provider-rental-dialog.controller.js"></script>
+    <script src="app/entities/provider/provider-rental-detail.controller.js"></script>
+    <script src="app/entities/provider/provider-rental-delete-dialog.controller.js"></script>
+    <script src="app/entities/provider/provider-rental.state.js"></script>
+    <script src="app/entities/provider/provider-rental.service.js"></script>
+    <script src="app/entities/provider/provider-rental.search.service.js"></script>
+    <script src="app/entities/provider/provider-rental.controller.js"></script>
+    <script src="app/entities/location/location-rental-dialog.controller.js"></script>
+    <script src="app/entities/location/location-rental-detail.controller.js"></script>
+    <script src="app/entities/location/location-rental-delete-dialog.controller.js"></script>
+    <script src="app/entities/location/location-rental.state.js"></script>
+    <script src="app/entities/location/location-rental.service.js"></script>
+    <script src="app/entities/location/location-rental.search.service.js"></script>
+    <script src="app/entities/location/location-rental.controller.js"></script>
     <script src="app/entities/entity.state.js"></script>
+    <script src="app/entities/coordinates/coordinates-rental-dialog.controller.js"></script>
+    <script src="app/entities/coordinates/coordinates-rental-detail.controller.js"></script>
+    <script src="app/entities/coordinates/coordinates-rental-delete-dialog.controller.js"></script>
+    <script src="app/entities/coordinates/coordinates-rental.state.js"></script>
+    <script src="app/entities/coordinates/coordinates-rental.service.js"></script>
+    <script src="app/entities/coordinates/coordinates-rental.search.service.js"></script>
+    <script src="app/entities/coordinates/coordinates-rental.controller.js"></script>
+    <script src="app/entities/car-price/car-price-rental-dialog.controller.js"></script>
+    <script src="app/entities/car-price/car-price-rental-detail.controller.js"></script>
+    <script src="app/entities/car-price/car-price-rental-delete-dialog.controller.js"></script>
+    <script src="app/entities/car-price/car-price-rental.state.js"></script>
+    <script src="app/entities/car-price/car-price-rental.service.js"></script>
+    <script src="app/entities/car-price/car-price-rental.search.service.js"></script>
+    <script src="app/entities/car-price/car-price-rental.controller.js"></script>
+    <script src="app/entities/car-attr/car-attr-rental-dialog.controller.js"></script>
+    <script src="app/entities/car-attr/car-attr-rental-detail.controller.js"></script>
+    <script src="app/entities/car-attr/car-attr-rental-delete-dialog.controller.js"></script>
+    <script src="app/entities/car-attr/car-attr-rental.state.js"></script>
+    <script src="app/entities/car-attr/car-attr-rental.service.js"></script>
+    <script src="app/entities/car-attr/car-attr-rental.search.service.js"></script>
+    <script src="app/entities/car-attr/car-attr-rental.controller.js"></script>
+    <script src="app/entities/car/car-rental-dialog.controller.js"></script>
+    <script src="app/entities/car/car-rental-detail.controller.js"></script>
+    <script src="app/entities/car/car-rental-delete-dialog.controller.js"></script>
+    <script src="app/entities/car/car-rental.state.js"></script>
+    <script src="app/entities/car/car-rental.service.js"></script>
+    <script src="app/entities/car/car-rental.search.service.js"></script>
+    <script src="app/entities/car/car-rental.controller.js"></script>
+    <script src="app/entities/bookings/bookings-rental-dialog.controller.js"></script>
+    <script src="app/entities/bookings/bookings-rental-detail.controller.js"></script>
+    <script src="app/entities/bookings/bookings-rental-delete-dialog.controller.js"></script>
+    <script src="app/entities/bookings/bookings-rental.state.js"></script>
+    <script src="app/entities/bookings/bookings-rental.service.js"></script>
+    <script src="app/entities/bookings/bookings-rental.search.service.js"></script>
+    <script src="app/entities/bookings/bookings-rental.controller.js"></script>
+    <script src="app/entities/availability/availability-rental-dialog.controller.js"></script>
+    <script src="app/entities/availability/availability-rental-detail.controller.js"></script>
+    <script src="app/entities/availability/availability-rental-delete-dialog.controller.js"></script>
+    <script src="app/entities/availability/availability-rental.state.js"></script>
+    <script src="app/entities/availability/availability-rental.service.js"></script>
+    <script src="app/entities/availability/availability-rental.search.service.js"></script>
+    <script src="app/entities/availability/availability-rental.controller.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
     <script src="app/components/util/truncate-characters.filter.js"></script>
     <script src="app/components/util/sort-by.directive.js"></script>
@@ -190,8 +258,16 @@
     <script src="app/account/activate/activate.state.js"></script>
     <script src="app/account/activate/activate.controller.js"></script>
     <script src="app/account/account.state.js"></script>
+    <!-- rent-it js -->
+    <script src="/content/js/modernizr.custom.js"></script>
+    <script src="/content/js/jquery/jquery-1.11.1.min.js"></script>
+    <script src="/content/js/bootstrap.min.js"></script>
+    <script src="/content/js/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="/content/js/bootstrap-datetimepicker/swiper.jquery.min.js"></script>
+    <script src="/content/js/bootstrap-datetimepicker/moment-with-locales.min.js"></script>
+    <script src="/content/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
-
+	
 </body>
 </html>

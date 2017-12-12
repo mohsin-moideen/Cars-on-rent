@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "provider",
+            "otherEntityName": "provider",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "carPrice",
+            "otherEntityName": "carPrice",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "car"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "carAttr",
+            "otherEntityName": "carAttr",
+            "otherEntityRelationshipName": "car"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "availability",
+            "otherEntityName": "availability",
+            "otherEntityRelationshipName": "car"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "capacity",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170813105148",
+    "entityTableName": "car",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "angularJSSuffix": "rental"
+}

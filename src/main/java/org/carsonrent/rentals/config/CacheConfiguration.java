@@ -44,6 +44,24 @@ public class CacheConfiguration {
             cm.createCache(org.carsonrent.rentals.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(org.carsonrent.rentals.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(org.carsonrent.rentals.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Location.class.getName(), jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Provider.class.getName(), jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Provider.class.getName() + ".cars", jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Car.class.getName(), jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Car.class.getName() + ".bookings", jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Bookings.class.getName(), jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Availability.class.getName(), jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Coordinates.class.getName(), jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Car.class.getName() + ".carAttrs", jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Car.class.getName() + ".", jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Bookings.class.getName() + ".providers", jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Bookings.class.getName() + ".users", jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Availability.class.getName() + ".cars", jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.CarPrice.class.getName(), jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.CarAttr.class.getName(), jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Car.class.getName() + ".availabilities", jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Provider.class.getName() + ".bookings", jcacheConfiguration);
+            cm.createCache(org.carsonrent.rentals.domain.Bookings.class.getName() + ".", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

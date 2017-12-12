@@ -1,0 +1,59 @@
+
+entity Location {
+	streetAddress String required,
+	postalCode String required,
+	city String required,
+	stateProvince String,
+    countryName String required
+}
+entity Coordinates {
+	lognitude Geometry required,
+    latitude Geometry required
+}
+entity Provider {
+	name String required
+}
+entity Car {
+	capacity Integer,
+}
+entity CarPrice{
+	 pricePerHour Double required,
+    depositAmount Double required
+}
+entity CarAttr {
+	attr_name String required,
+    attr_val String required,
+}
+entity Bookings {
+	startDate ZonedDateTime required,
+	endDate ZonedDateTime required,
+    status String required
+}
+entity Availability{
+	startDate ZonedDateTime required,
+	endDate ZonedDateTime required,
+}
+
+relationship OneToOne {
+	Provider{location} to Location,
+    Location{coordinates} to Coordinates,
+    Car{carPrice} to CarPrice
+}
+relationship OneToMany {
+	Provider{car} to Car,
+    Car{carAttr} to CarAttr,
+    Car{availability} to Availability
+}
+relationship ManyToOne {
+	 Bookings{provider} to Provider,
+     Bookings{user} to User
+}
+
+// Set pagination options
+paginate Car, Bookings, Provider with infinite-scroll
+
+ 
+// Set service options to all except few
+service all with serviceImpl except Availability
+// Set an angular suffix
+angularSuffix * with rental

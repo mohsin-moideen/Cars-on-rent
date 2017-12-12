@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="carsOnRentApp.bookings.detail.title">Bookings</span> {{vm.bookings.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="carsOnRentApp.bookings.startDate">Start Date</span></dt>
+        <dd>
+            <span>{{vm.bookings.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="carsOnRentApp.bookings.endDate">End Date</span></dt>
+        <dd>
+            <span>{{vm.bookings.endDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="carsOnRentApp.bookings.status">Status</span></dt>
+        <dd>
+            <span>{{vm.bookings.status}}</span>
+        </dd>
+        <dt><span data-translate="carsOnRentApp.bookings.provider">Provider</span></dt>
+        <dd>
+            <a ui-sref="provider-rental-detail({id:vm.bookings.provider.id})">{{vm.bookings.provider.id}}</a>
+        </dd>
+        <dt><span data-translate="carsOnRentApp.bookings.user">User</span></dt>
+        <dd>
+            {{vm.bookings.user.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="bookings-rental-detail.edit({id:vm.bookings.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

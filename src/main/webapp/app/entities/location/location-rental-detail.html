@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="carsOnRentApp.location.detail.title">Location</span> {{vm.location.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="carsOnRentApp.location.streetAddress">Street Address</span></dt>
+        <dd>
+            <span>{{vm.location.streetAddress}}</span>
+        </dd>
+        <dt><span data-translate="carsOnRentApp.location.postalCode">Postal Code</span></dt>
+        <dd>
+            <span>{{vm.location.postalCode}}</span>
+        </dd>
+        <dt><span data-translate="carsOnRentApp.location.city">City</span></dt>
+        <dd>
+            <span>{{vm.location.city}}</span>
+        </dd>
+        <dt><span data-translate="carsOnRentApp.location.stateProvince">State Province</span></dt>
+        <dd>
+            <span>{{vm.location.stateProvince}}</span>
+        </dd>
+        <dt><span data-translate="carsOnRentApp.location.countryName">Country Name</span></dt>
+        <dd>
+            <span>{{vm.location.countryName}}</span>
+        </dd>
+        <dt><span data-translate="carsOnRentApp.location.coordinates">Coordinates</span></dt>
+        <dd>
+            <a ui-sref="coordinates-rental-detail({id:vm.location.coordinates.id})">{{vm.location.coordinates.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="location-rental-detail.edit({id:vm.location.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

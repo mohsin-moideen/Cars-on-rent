@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "pricePerHour",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "depositAmount",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170902092108",
+    "entityTableName": "car_price",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "angularJSSuffix": "rental"
+}

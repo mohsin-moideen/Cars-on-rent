@@ -1,0 +1,23 @@
+{
+    "carsOnRentApp": {
+        "carPrice" : {
+            "home": {
+                "title": "Car Prices",
+                "createLabel": "Create a new Car Price",
+                "createOrEditLabel": "Create or edit a Car Price",
+                "search": "Search for Car Price"
+            },
+            "created": "A new Car Price is created with identifier {{ param }}",
+            "updated": "A Car Price is updated with identifier {{ param }}",
+            "deleted": "A Car Price is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Car Price {{ id }}?"
+            },
+            "detail": {
+                "title": "Car Price"
+            },
+            "pricePerHour": "Price Per Hour",
+            "depositAmount": "Deposit Amount"
+        }
+    }
+}

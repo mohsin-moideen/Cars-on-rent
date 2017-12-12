@@ -1,11 +1,12 @@
 (function() {
     'use strict';
 
-    angular
-        .module('carsOnRentApp')
-        .controller('HomeController', HomeController);
+    var module = angular.module('carsOnRentApp');
+    module.controller('HomeController', HomeController);
+    module.controller('FormController', FormController);
 
     HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+    FormController.$inject = ['$scope'];
 
     function HomeController ($scope, Principal, LoginService, $state) {
         var vm = this;
@@ -29,5 +30,9 @@
         function register () {
             $state.go('register');
         }
+    }
+    
+    function FormController ($scope ){
+    	
     }
 })();

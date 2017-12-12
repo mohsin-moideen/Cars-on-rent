@@ -7,6 +7,14 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "locationRental": "Location",
+                "providerRental": "Provider",
+                "carRental": "Car",
+                "bookingsRental": "Bookings",
+                "availabilityRental": "Availability",
+                "coordinatesRental": "Coordinates",
+                "carPriceRental": "Car Price",
+                "carAttrRental": "Car Attr",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

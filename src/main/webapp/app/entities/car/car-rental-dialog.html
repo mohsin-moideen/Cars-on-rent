@@ -1,0 +1,44 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCarLabel" data-translate="carsOnRentApp.car.home.createOrEditLabel">Create or edit a Car</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.car.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.car.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="carsOnRentApp.car.capacity" for="field_capacity">Capacity</label>
+            <input type="number" class="form-control" name="capacity" id="field_capacity"
+                    ng-model="vm.car.capacity"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="carsOnRentApp.car.provider" for="field_provider">Provider</label>
+            <select class="form-control" id="field_provider" name="provider" ng-model="vm.car.provider" ng-options="provider as provider.id for provider in vm.providers track by provider.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="carsOnRentApp.car.carPrice" for="field_carPrice">Car Price</label>
+            <select class="form-control" id="field_carPrice" name="carPrice" ng-model="vm.car.carPrice" ng-options="carPrice as carPrice.id for carPrice in vm.carprices | orderBy:'id' track by carPrice.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
